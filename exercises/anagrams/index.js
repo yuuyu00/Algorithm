@@ -8,12 +8,10 @@
 //   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
-function anagrams(stringA, stringB) {
-  return [...stringA].every(str_a =>
-    [...stringB].every(str_b => str_a === str_b)
+const anagrams = (stringA, stringB) => {
+  return [...stringB].every(str_b =>
+    [...stringA].some(str_a => str_a === str_b)
   );
-}
-
-console.log(anagrams("hello", "llohe"));
+};
 
 module.exports = anagrams;
